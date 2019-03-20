@@ -98,7 +98,8 @@
                 <nav class="classy-navbar justify-content-between" id="dentoNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="{{route('index')}}"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="{{route('index')}}"><img src="{{asset('/img/core-img/logo.png')}}"
+                                                                        alt="{{env('APP_NAME')}}"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -116,38 +117,25 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li><a href="{{route('index')}}">Home</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{{route('index')}}">- Home</a></li>
-                                        <li><a href="{{route('about')}}">- About Us</a></li>
-                                        <li><a href="service.html">- Service</a></li>
-                                        <li><a href="pricing.html">- Pricing</a></li>
-                                        <li><a href="blog.html">- Blog</a></li>
-                                        <li><a href="blog-details.html">- Blog Details</a></li>
-                                        <li><a href="contact.html">- Contact</a></li>
-                                        <li><a href="#">- Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                            </ul>
-                                        </li>
+                                <li><a href="{{route('index')}}">Beranda</a></li>
+                                <li><a href="{{route('about')}}">Tentang Kami</a></li>
+                                <li><a href="{{route('product')}}">Produk</a>
+                                    <ul class="dropdown" style="width: 208px">
+                                        @foreach($data['product'] as $product)
+                                            <li class="has-down">
+                                                <a href="{{route('productDetails',['product'=>$product->id])}}">- {{strlen($product->name)<20?$product->name:substr($product->name,0,19).'...'}}</a>
+                                                <ul class="dropdown" style="left: 197px;">
+                                                    @foreach($product->brands as $brand)
+                                                        <li><a href="{{route('subProduct',['product'=>$product->id,'brand'=>$brand->id])}}">- {{strlen($brand->name)<20?$brand->name:substr($brand->name,0,19).'...'}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="{{route('about')}}">About</a></li>
-                                <li><a href="service.html">Service</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="{{route('news')}}">News</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="{{route('catalogue')}}">Download Katalog</a></li>
+                                <li><a href="{{route('news')}}">Berita & Event</a></li>
+                                <li><a href="{{route('contact')}}">Hubungi Kami</a></li>
                             </ul>
                         </div>
                         <!-- Nav End -->
@@ -171,13 +159,20 @@
             <!-- Single Footer Widget -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-footer-widget">
-                    <a href="./index.html" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a href="{{asset('index')}}" class="d-block mb-4"><img src="{{asset('/img/core-img/logo.png')}}"
+                                                                           alt=""></a>
                     <p>{{isset($data['about']->short_info)?$data['about']->short_info:
                     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus et explicabo facilis fuga, illo ipsam odio perspiciatis quaerat quas quia quidem repellendus similique sint veniam. Amet eius in pariatur!'}}</p>
                     <div class="footer-contact">
-                        <p><i class="icon_pin"></i> {{isset($data['contact']->address)?$data['contact']->address:'the address unset'}}</p>
-                        <p><i class="icon_phone"></i> {{isset($data['contact']->phone)?$data['contact']->phone:'phone number unset'}}</p>
-                        <p><i class="icon_mail"></i> {{isset($data['contact']->email)?$data['contact']->email:'the email unset'}}</p>
+                        <p>
+                            <i class="icon_pin"></i> {{isset($data['contact']->address)?$data['contact']->address:'the address unset'}}
+                        </p>
+                        <p>
+                            <i class="icon_phone"></i> {{isset($data['contact']->phone)?$data['contact']->phone:'phone number unset'}}
+                        </p>
+                        <p>
+                            <i class="icon_mail"></i> {{isset($data['contact']->email)?$data['contact']->email:'the email unset'}}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -186,15 +181,13 @@
             <div class="col-12 col-sm-6 col-lg">
                 <div class="single-footer-widget">
                     <!-- Widget Title -->
-                    <h5 class="widget-title">Opening Hours</h5>
+                    <h5 class="widget-title">Jam Operasional</h5>
 
                     <!-- Opening Hours -->
                     <ul class="opening-hours">
-                        <li><span>Mon-Wed</span> <span>8.00-18.00</span></li>
-                        <li><span>Thu-Fri</span> <span>8.00-17.00</span></li>
-                        <li><span>Sat</span> <span>9.00-17.00</span></li>
-                        <li><span>Sun</span> <span>10.00-17.00</span></li>
-                        <li><span>Holiday</span> <span>Closed</span></li>
+                        <li><span>Senin - Jum'at</span> <span>8.00-17.00</span></li>
+						<li><span>Sabtu</span><span>8.00-12.00</span></li>	
+                        <li><span>Minggu</span> <span>Tutup</span></li>
                     </ul>
                 </div>
             </div>
@@ -203,7 +196,7 @@
             <div class="col-12 col-sm-6 col-lg">
                 <div class="single-footer-widget">
                     <!-- Widget Title -->
-                    <h5 class="widget-title">Quick Link</h5>
+                    <h5 class="widget-title">Akses Cepat</h5>
 
                     <!-- Quick Links Nav -->
                     <nav>
@@ -229,7 +222,7 @@
                     <!-- Widget Title -->
                     <h5 class="widget-title">Sosial Media</h5>
 
-                    <p>we excited to see you. feel free to touch us.</p>
+                    <p>Temukan kami di sosial media</p>
 
                     <!-- Social Info -->
                     <div class="footer-social-info">
@@ -274,13 +267,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="copywrite-content">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        {{env('APP_NAME')}} All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                                aria-hidden="true"></i>
-                        by <a
-                            href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        {{env('APP_NAME')}} All rights reserved 
+                        </p>
                 </div>
             </div>
         </div>
@@ -293,15 +283,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
 <!-- Popper js -->
-<script src="js/popper.min.js"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- All js -->
-<script src="js/dento.bundle.js"></script>
+<script src="{{asset('js/dento.bundle.js')}}"></script>
 <!-- Active js -->
-<script src="js/default-assets/active.js"></script>
+<script src="{{asset('js/default-assets/active.js')}}"></script>
+<!-- Active js -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <!-- Active js -->
 <script type="text/javascript">
+
+
     $(document).ready(function () {
 
         var owl = $("#owl-demo");

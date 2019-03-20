@@ -14,15 +14,15 @@ class contactSeeder extends Seeder
         $faker = \Faker\Factory::create('id_ID');
 
         \App\contact::create([
-            'address' => $faker->address,
-            'email' => $faker->safeEmail,
-            'phone' => $faker->phoneNumber(true,true),
-            'facebook' => 'https://facebook.com',
-            'twitter' => 'https://twitter.com',
-            'instagram' => 'https://instagram.com',
-            'linkedin' => 'https://linkedin.com',
-            'pinterest' => 'https://pinterest.com',
-            'google_plus' => 'https://google_plus.com',
+            'contact_address' => $faker->address,
+            'contact_email' => $faker->safeEmail,
+            'contact_phone' => $faker->phoneNumber(true,true),
+            'contact_facebook' => 'https://facebook.com',
+            'contact_twitter' => 'https://twitter.com',
+            'contact_instagram' => 'https://instagram.com',
+            'contact_linkedin' => 'https://linkedin.com',
+            'contact_pinterest' => 'https://pinterest.com',
+            'contact_google_plus' => 'https://google_plus.com',
         ]);
     }
 }

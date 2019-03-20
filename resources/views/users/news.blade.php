@@ -18,20 +18,21 @@
                 <div class="col-12 col-lg-8">
 
                     <!-- Single Blog Item -->
-               @if(count($articles)>0)
-                   @foreach($articles as $article)
-                       @component('components.card-news')
-                           @slot('url',route('news_single',['id',$article->id]))
-                           @slot('img',$article->img)
-                           @slot('title',$article->title)
-                           @slot('date',\Carbon\Carbon::parse($article->created_at))
-                           @slot('countComment',0)
-                           {{substr(strip_tags($article->desc),0,191)}} {{strlen($article->desc>191)?'':' .....'}}
-                       @endcomponent
-                   @endforeach
-                   @else
-                   <h3>Data not found</h3>
-                   @endif
+                    @if(count($articles)>0)
+                        @foreach($articles as $article)
+                            @component('components.card-news')
+                                @slot('url',route('news_single',['id'=>$article->id]))
+                                @slot('img',$article->img)
+                                @slot('id',$article->id)
+                                @slot('title',$article->title)
+                                @slot('date',\Carbon\Carbon::parse($article->created_at))
+                                @slot('countComment',0)
+                                {{substr(strip_tags($article->desc),0,191)}} {{strlen($article->desc>191)?'':' .....'}}
+                            @endcomponent
+                        @endforeach
+                    @else
+                        <h3>Data not found</h3>
+                @endif
 
                 <!-- Pagination -->
                     <nav class="dento-pagination mb-100">
@@ -60,7 +61,9 @@
                             <ul class="catagories-list">
                                 @foreach($categories as $category)
                                     <li>
-                                        <a href="{{route('news',['state'=>true,'category'=>$category->id])}}">{{$category->name}}</a>
+                                        <a href="{{route('news',['state'=>true,'cat'=>$category->id])}}{{isset($_GET['q'])?'&q='.$_GET['q']:''}}">
+                                            {{$category->name}}
+                                        </a>
                                     </li>
                                 @endforeach
 
@@ -96,12 +99,20 @@
 @endsection
 
 @push('js')
+    <script id="dsq-count-scr" src="//company-profiles.disqus.com/count.js" async></script>
     <script>
-        $(function(){
-            $('.search-widget form').on('submit',function (e) {
+        $(function () {
+            let objChange = $('.search-widget').find('i');
+            let objInput = $('.search-widget').find('input');
+
+            $('.search-widget form').on('submit', function (e) {
                 e.preventDefault();
-                window.location.href = "{{route('news')}}?q="+$(this).children('[type="search"]').val()+'&state=1';
+                    let category = '{{isset($_GET['cat'])?$_GET['cat']:''}}';
+                    window.location.href = "{{route('news')}}?q=" + $(this).children('[type="search"]').val() +
+                        (category ? '&cat=' + category : '') + '&state=1';
+
             });
+
         });
     </script>
-    @endpush
+@endpush

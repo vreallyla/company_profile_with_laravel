@@ -4,7 +4,7 @@
 
     <!-- ***** Breadcrumb Area Start ***** -->
     @component('components.breadcrumb')
-        @slot('img',asset('img/bg-img/3.jpg'))
+        @slot('img',asset('img/bg-img/meeting.jpg'))
         @slot('quote',$data['about']->quote)
         @slot('thirdLink',false)
 

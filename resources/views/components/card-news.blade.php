@@ -7,11 +7,13 @@
     </div>
     <!-- Blog Content -->
     <div class="blog-content">
-        <a href="./blog-details.html" class="post-title">{{$title}}</a>
+        <a href="{{$url}}" class="post-title">{{$title}}</a>
         <p>{{$slot}}</p>
         <div class="post-meta">
             <a href="#"><i class="icon_clock_alt"></i> {{$date}}</a>
-            <a href="#"><i class="icon_chat_alt"></i> {{$countComment?$countComment:0}} Comments</a>
+            <a href="#"><i class="icon_chat_alt"></i>
+                <span class="disqus-comment-count" data-disqus-identifier="{{$id}}">0 Comment</span>
+            </a>
         </div>
     </div>
 </div>

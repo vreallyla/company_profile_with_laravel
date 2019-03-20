@@ -15,8 +15,8 @@ class ArticleSeeder extends Seeder
 
         for ($i=0;$i<6;$i++){
             \App\categoryArticle::create([
-                'name'=>$faker->region(),
-                'desc'=>$faker->realText($maxNbChars = 191, $indexSize = 2),
+                'cat_name'=>$faker->region(),
+                'cat_desc'=>$faker->realText($maxNbChars = 191, $indexSize = 2),
 
             ]);
         }
@@ -24,27 +24,27 @@ class ArticleSeeder extends Seeder
         $faker = \Faker\Factory::create('id_ID');
 
 //
-//       for ($i=0;$i<11;$i++){
-//           \App\article::create([
-//               'title' => $faker->word,
-//               'img' => '/img/footages/600x400.png',
-//               'by' => \App\User::first()->id,
-//               'desc' => '<p>' . $faker->realText($maxNbChars = 191, $indexSize = 2) .
-//                   '</p><p>' . $faker->realText($maxNbChars = 230, $indexSize = 2) .
-//                   '</p><p>' . $faker->realText($maxNbChars = 200, $indexSize = 2) .
-//                   '</p><p>' . $faker->realText($maxNbChars = 191, $indexSize = 2) . '</p>',
-//               'category_id'=>\App\categoryArticle::orderByRaw('RAND()')->take(1)->first()->id
-//           ]);
-//       }
+       for ($i=0;$i<11;$i++){
+           \App\article::create([
+               'art_title' => $faker->word,
+               'art_img' => '/img/footages/600x400.png',
+               'art_by' => \App\User::first()->code,
+               'art_desc' => '<p>' . $faker->realText($maxNbChars = 191, $indexSize = 2) .
+                   '</p><p>' . $faker->realText($maxNbChars = 230, $indexSize = 2) .
+                   '</p><p>' . $faker->realText($maxNbChars = 200, $indexSize = 2) .
+                   '</p><p>' . $faker->realText($maxNbChars = 191, $indexSize = 2) . '</p>',
+               'art_category_id'=>\App\categoryArticle::orderByRaw('RAND()')->take(1)->first()->code
+           ]);
+       }
 
 
-        foreach (\App\article::all() as $article) {
-
-            foreach ( \App\categoryArticle::orderByRaw('RAND()')->take($faker->numberBetween(1,3))->get() as $category)
-            \App\rsCategoriesNArticle::create([
-                'category_id' => $category->id,
-                'article_id' => $article->id
-            ]);
-        }
+//        foreach (\App\article::all() as $article) {
+//
+//            foreach ( \App\categoryArticle::orderByRaw('RAND()')->take($faker->numberBetween(1,3))->get() as $category)
+//            \App\rsCategoriesNArticle::create([
+//                'category_id' => $category->id,
+//                'article_id' => $article->id
+//            ]);
+//        }
     }
 }

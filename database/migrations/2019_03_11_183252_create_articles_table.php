@@ -14,14 +14,14 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->string('id',36)->primary();
-            $table->string('title',50);
-            $table->string('img',100);
-            $table->string('by');
-            $table->foreign('by')->references('id')->on('users');
-            $table->text('desc');
-            $table->string('category_id',36);
-            $table->foreign('category_id')->references('id')->on('category_articles');
+            $table->string('code',36)->primary();
+            $table->string('art_title',50);
+            $table->string('art_img',100);
+            $table->string('art_by');
+            $table->foreign('art_by')->references('code')->on('users');
+            $table->text('art_desc');
+            $table->string('art_category_id',36);
+            $table->foreign('art_category_id')->references('code')->on('category_articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -14,14 +14,15 @@ class CreateRsBrandsProductsTable extends Migration
     public function up()
     {
         Schema::create('rs_brands_products', function (Blueprint $table) {
+            $table->string('code',36)->primary();
             $table->string('brand_id',36);
-            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('brand_id')->references('code')->on('brands');
             $table->string('product_id',36);
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->string('title',50);
-            $table->string('img',100);
-            $table->text('desc');
-            $table->string('link_catalogue',100);
+            $table->foreign('product_id')->references('code')->on('products');
+            $table->string('list_title',50);
+            $table->string('list_img',100);
+            $table->text('list_desc');
+            $table->string('link_catalogue');
 
             $table->timestamps();
         });

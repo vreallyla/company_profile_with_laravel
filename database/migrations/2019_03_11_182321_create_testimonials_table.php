@@ -14,11 +14,11 @@ class CreateTestimonialsTable extends Migration
     public function up()
     {
         Schema::create('testimonials', function (Blueprint $table) {
-            $table->string('id',36)->primary();
-            $table->string('ava',50);
-            $table->string('name',50);
-            $table->string('as',50);
-            $table->text('desc');
+            $table->string('code',36)->primary();
+            $table->string('testi_ava',50);
+            $table->string('testi_name',50);
+            $table->string('testi_as',50);
+            $table->text('testi_desc');
             $table->timestamps();
         });
     }

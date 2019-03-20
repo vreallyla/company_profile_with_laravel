@@ -17,10 +17,12 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
+        'code', 'created_at', 'updated_at',
     ];
+
     public $incrementing = false;
+    protected $primaryKey = 'code';
 
     /**
      * The attributes that should be hidden for arrays.
@@ -28,7 +30,16 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','user_name','user_ava','code'
+    ];
+
+    /**
+     * The attributes that should be append for arrays.
+     *
+     * @var array
+     */
+    protected $appends=[
+        'name','ava','id'
     ];
 
     /**
@@ -44,8 +55,25 @@ class User extends Authenticatable implements JWTSubject
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->id = (string)ShortUuid::uuid4();
+            $model->code = (string)ShortUuid::uuid4();
         });
+    }
+
+    /**
+     * data appends
+     * @return mixed
+     */
+    public function getIdAttribute()
+    {
+        return $this->attributes['code'];
+    }
+    public function getNameAttribute()
+    {
+        return $this->attributes['user_name'];
+    }
+    public function getAvaAttribute()
+    {
+        return $this->attributes['user_ava'];
     }
 
     /**

@@ -50,20 +50,20 @@ class productSeeder extends Seeder
 
         foreach ($products as $product) {
             \App\product::create([
-                'name' => $product['name'],
-                'img' => $product['img'],
-                'desc' => $product['desc'],
+                'pro_name' => $product['name'],
+                'pro_img' => $product['img'],
+                'pro_desc' => $product['desc'],
             ]);
         }
 
         foreach (\App\product::all() as $product) {
             foreach (\App\brand::orderByRaw('RAND()')->take($faker->numberBetween(1, 4))->get() as $brand)
                 \App\rsBrandsProduct::create([
-                    'brand_id' => $brand->id,
-                    'product_id' => $product->id,
-                    'title' => $faker->word,
-                    'img' => '/img/footages/600x400.png',
-                    'desc' => '<p>'.$faker->realText($maxNbChars = 191, $indexSize = 2).'</p>',
+                    'brand_id' => $brand->code,
+                    'product_id' => $product->code,
+                    'list_title' => $faker->word,
+                    'list_img' => '/img/footages/600x400.png',
+                    'list_desc' => '<p>'.$faker->realText($maxNbChars = 191, $indexSize = 2).'</p>',
                     'link_catalogue' => $faker->url,
                 ]);
         }

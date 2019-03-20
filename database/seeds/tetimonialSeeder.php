@@ -15,10 +15,10 @@ class tetimonialSeeder extends Seeder
 
        for ($i=0;$i<6;$i++){
            \App\testimonial::create([
-               'ava' => '/img/footages/user.png',
-               'name' => $faker->firstName,
-               'as' => $faker->jobTitle,
-               'desc' => $faker->realText($maxNbChars = 191, $indexSize = 2),
+               'testi_ava' => '/img/footages/user.png',
+               'testi_name' => $faker->firstName,
+               'testi_as' => $faker->jobTitle,
+               'testi_desc' => $faker->realText($maxNbChars = 191, $indexSize = 2),
            ]);
        }
     }

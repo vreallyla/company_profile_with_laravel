@@ -15,8 +15,8 @@ class brandSeeder extends Seeder
 
         for ($i = 0; $i < 11; $i++) {
             \App\brand::create([
-                'logo' => '/img/footages/300x100.jpg',
-                'name' => $faker->unique()->company(),
+                'brand_logo' => '/img/footages/300x100.jpg',
+                'brand_name' => $faker->unique()->company(),
             ]);
         }
     }

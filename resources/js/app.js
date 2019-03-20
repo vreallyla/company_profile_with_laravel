@@ -31,3 +31,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+
+// window.axios = require('axios');
+//
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//
+// let token = document.head.querySelector('meta[name="token-code"]');
+//
+// if (token) {
+//     window.axios.defaults.headers.common['Authorization'] = 'bearer '+token.content;
+// } else {
+//     console.error('You must login first!');
+// }

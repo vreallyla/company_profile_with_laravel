@@ -14,13 +14,16 @@ class CreateAboutsTable extends Migration
     public function up()
     {
         Schema::create('abouts', function (Blueprint $table) {
-            $table->string('img');
-            $table->string('quote',60);
-            $table->string('short_info');
-            $table->text('history');
-            $table->text('intro');
-            $table->text('vision');
-            $table->text('mission');
+            $table->string('code',36)->primary();
+            $table->string('company_img',100);
+            $table->string('company_logo',100);
+            $table->string('company_name',50);
+            $table->string('company_quote',60);
+            $table->string('company_short_info');
+            $table->text('company_history');
+            $table->text('company_intro');
+            $table->text('company_vision');
+            $table->text('company_mission');
 
             $table->timestamps();
         });

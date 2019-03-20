@@ -37,11 +37,11 @@ Last Update: Dec 05, 2018
   $heading: #333333; [Heading Color]
   $text: #707070; [Text Color]
   $bg-gray: #f4f4f4; [Gray Background]
-  $primary: #00aeef; [Primary Color]
+  $primary: #002762; [Primary Color]
   $white: #ffffff; [White Color]
   $dark: #000; [Dark Color]
   $border: #7450fe; [Border Color]
-  $hover: #00aeef; [Hover Color]
+  $hover: #002762; [Hover Color]
   $footer: #191c1d; [Footer Color]
   $secondary: #222222; [Secondary Color]
 
@@ -151,8 +151,8 @@ ul li {
     left: 0;
     z-index: -1;
     background: #2c455d;
-    background: -webkit-linear-gradient(to right, #2c455d, #00012c);
-    background: linear-gradient(to right, #2c455d, #00012c);
+    background: -webkit-linear-gradient(to right, #7793af, #0d0d21);
+    background: linear-gradient(to right, #7793af, #0d0d21);
     opacity: 0.85;
 }
 
@@ -170,8 +170,8 @@ ul li {
     left: 0;
     z-index: -1;
     background: #2c455d;
-    background: -webkit-linear-gradient(to right, #2c455d, #00012c);
-    background: linear-gradient(to right, #8a8480, #00012c);
+    background: -webkit-linear-gradient(to right, #7793af, #0d0d21);
+    background: linear-gradient(to right, #7793af, #0d0d21);
     opacity: 0.85;
 }
 
@@ -207,7 +207,7 @@ ul li {
     top: 0;
     width: 30px;
     height: 30px;
-    background-color: #00aeef;
+    background-color: #002762;
     text-align: center;
     right: 0;
     padding-right: 0;
@@ -378,7 +378,7 @@ ul li {
     border: 3px;
     border-style: solid;
     border-color: transparent;
-    border-top-color: #00aeef;
+    border-top-color: #002762;
     -webkit-animation: dentorotate 2400ms linear infinite;
     animation: dentorotate 2400ms linear infinite;
     z-index: 999;
@@ -395,7 +395,7 @@ ul li {
     border: 3px;
     border-style: solid;
     border-color: transparent;
-    border-top-color: #00aeef;
+    border-top-color: #002762;
     -webkit-animation: dentorotate 2700ms linear infinite;
     animation: dentorotate 2700ms linear infinite;
 }
@@ -411,7 +411,7 @@ ul li {
     border: 3px;
     border-style: solid;
     border-color: transparent;
-    border-top-color: #00aeef;
+    border-top-color: #002762;
     -webkit-animation: dentorotate 1800ms linear infinite;
     animation: dentorotate 1800ms linear infinite;
 }
@@ -473,7 +473,7 @@ ul li {
 .section-heading .line {
     width: 70px;
     height: 4px;
-    background-color: #00aeef;
+    background-color: #002762;
 }
 
 .section-heading.text-center .line {
@@ -490,7 +490,7 @@ ul li {
     line-height: 42px;
     right: 0;
     width: 40px;
-    background-color: #00aeef;
+    background-color: #002762;
     color: #ffffff;
     text-align: center;
     height: 40px;
@@ -518,11 +518,11 @@ ul li {
     text-transform: uppercase;
     color: #ffffff;
     border-radius: 2px;
-    background-color: #00aeef;
+    background-color: #002762;
     -webkit-transition: all 500ms;
     -o-transition: all 500ms;
     transition: all 500ms;
-    border: 2px solid #00aeef;
+    border: 2px solid #002762;
 }
 
 @media only screen and (max-width: 767px) {
@@ -542,12 +542,13 @@ ul li {
 .dento-btn.active, .dento-btn:focus, .dento-btn:hover {
     box-shadow: none;
     background-color: transparent;
-    color: #00aeef;
+    color: #497ed0;
+    border: 2px solid #497ed0;
 }
 
 .dento-btn.btn-2:focus, .dento-btn.btn-2:hover {
     background-color: #ffffff;
-    color: #00aeef;
+    color: #002762;
 }
 
 .dento-btn.booking-btn {
@@ -563,7 +564,7 @@ ul li {
     font-size: 12px;
     font-weight: 600;
     background-color: #ffffff;
-    color: #00aeef !important;
+    color: #002762 !important;
 }
 
 .header-area {
@@ -600,7 +601,7 @@ ul li {
 }
 
 .top-header-area .top-header-content a i {
-    color: #00aeef;
+    color: #002762;
     margin-right: 5px;
 }
 
@@ -628,7 +629,7 @@ ul li {
 }
 
 .top-header-area .top-header-social-info a:focus, .top-header-area .top-header-social-info a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .classy-nav-container {
@@ -667,7 +668,7 @@ ul li {
 }
 
 .classy-nav-container .classy-navbar .classynav ul li a:focus, .classy-nav-container .classy-navbar .classynav ul li a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -924,12 +925,12 @@ ul li {
     font-size: 14px;
     text-align: center;
     line-height: 40px;
-    color: #00aeef;
+    color: #002762;
     margin: 0 7px;
 }
 
 .single-dentist-area .dentist-content .dentist-social-info a:focus, .single-dentist-area .dentist-content .dentist-social-info a:hover {
-    background-color: #00aeef;
+    background-color: #002762;
     color: #ffffff;
 }
 
@@ -1005,7 +1006,7 @@ ul li {
 
 .dento-price-table table thead tr > td,
 .dento-price-table table thead tr > th {
-    background-color: #00aeef;
+    background-color: #002762;
     color: #ffffff;
 }
 
@@ -1054,7 +1055,7 @@ ul li {
 }
 
 .single-service:focus h6, .single-service:hover h6 {
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-service--area {
@@ -1087,7 +1088,7 @@ ul li {
 }
 .single-service--area .icon-- .fa {
     font-size: 30px;
-    color: #00aeef;
+    color: #002762;
     position: absolute;
     max-height: 35px;
     z-index: 2;
@@ -1127,7 +1128,7 @@ ul li {
     width: 60px;
     height: 60px;
     color: #ffffff;
-    background-color: #00aeef;
+    background-color: #002762;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -1192,7 +1193,7 @@ ul li {
 
 .single-cta i {
     font-size: 50px;
-    color: #00aeef;
+    color: #002762;
     margin-bottom: 15px;
     display: block;
 }
@@ -1351,7 +1352,7 @@ ul li {
 .breadcumb--con .breadcrumb .breadcrumb-item > a:hover,
 .breadcumb--con .breadcrumb .breadcrumb-item.active:focus,
 .breadcumb--con .breadcrumb .breadcrumb-item.active:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .breadcumb--con .breadcrumb .breadcrumb-item.active {
@@ -1397,7 +1398,7 @@ ul li {
 }
 
 .single-blog-item .blog-content .post-title:focus, .single-blog-item .blog-content .post-title:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1417,7 +1418,7 @@ ul li {
 }
 
 .single-blog-item .blog-content .post-meta a i {
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-blog-item .blog-content .post-meta a:last-child {
@@ -1425,7 +1426,7 @@ ul li {
 }
 
 .single-blog-item .blog-content .post-meta a:focus, .single-blog-item .blog-content .post-meta a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-blog-item.style-2 {
@@ -1471,14 +1472,14 @@ ul li {
 }
 
 .dento-pagination .pagination .page-item .page-link:focus, .dento-pagination .pagination .page-item .page-link:hover {
-    background-color: #00aeef;
-    border-color: #00aeef;
+    background-color: #002762;
+    border-color: #002762;
     color: #ffffff;
 }
 
 .dento-pagination .pagination .page-item.active .page-link {
-    background-color: #00aeef;
-    border-color: #00aeef;
+    background-color: #002762;
+    border-color: #002762;
     color: #ffffff;
 }
 
@@ -1558,7 +1559,7 @@ ul li {
 }
 
 .comment_area .comment-content .comment-meta .post-author:focus, .comment_area .comment-content .comment-meta .post-author:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .comment_area .comment-content .comment-meta p {
@@ -1589,7 +1590,7 @@ ul li {
 }
 
 .comment_area .comment-content .comment-meta .comment-reply:focus, .comment_area .comment-content .comment-meta .comment-reply:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .comment_area .children {
@@ -1626,7 +1627,7 @@ ul li {
 
 .search-widget form .form-control:focus {
     box-shadow: none;
-    border-color: #00aeef;
+    border-color: #002762;
 }
 
 .search-widget form button {
@@ -1664,7 +1665,7 @@ ul li {
 }
 
 .catagories-list li a:focus, .catagories-list li a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .catagories-list li:last-child a {
@@ -1702,7 +1703,7 @@ ul li {
 }
 
 .single-news-area .blog-content .post-title:focus, .single-news-area .blog-content .post-title:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-news-area .blog-content .post-date {
@@ -1746,7 +1747,7 @@ ul li {
 }
 
 .blog-details-area .post-meta a i {
-    color: #00aeef;
+    color: #002762;
 }
 
 .blog-details-area .post-meta a:last-child {
@@ -1754,7 +1755,7 @@ ul li {
 }
 
 .blog-details-area .post-meta a:focus, .blog-details-area .post-meta a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .blog-details-area p {
@@ -1803,7 +1804,7 @@ ul li {
 
 .dento-blockquote .text h6 span {
     font-size: 12px;
-    color: #00aeef;
+    color: #002762;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1817,7 +1818,7 @@ ul li {
     width: 120px;
     height: 46px;
     border-radius: 3px;
-    background-color: #00aeef;
+    background-color: #002762;
     line-height: 46px;
     color: #ffffff;
     margin-right: 10px;
@@ -1973,7 +1974,7 @@ ul li {
 .single-footer-widget .footer-contact p i {
     display: inline-block;
     margin-right: 5px;
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-footer-widget .footer-contact p:last-child {
@@ -2029,7 +2030,7 @@ ul li {
 }
 
 .single-footer-widget .quick-links li a:focus, .single-footer-widget .quick-links li a:hover {
-    color: #00aeef;
+    color: #002762;
 }
 
 .single-footer-widget .quick-links li:last-child a {
@@ -2056,7 +2057,7 @@ ul li {
 .single-footer-widget .footer-newsletter-form button {
     width: auto;
     padding: 0 15px;
-    background-color: #00aeef;
+    background-color: #002762;
     color: #ffffff;
     border: none;
     border-radius: 0 2px 2px 0;
@@ -2134,7 +2135,7 @@ ul li {
     position: relative;
     z-index: 1;
     padding: 30px 50px;
-    background-color: #00aeef;
+    background-color: #002762;
     border-radius: 3px;
 }
 
@@ -2167,7 +2168,7 @@ ul li {
 
 .contact-form .form-control:focus {
     box-shadow: none;
-    border-color: #00aeef;
+    border-color: #002762;
 }
 
 .contact-form textarea.form-control {
@@ -2202,4 +2203,21 @@ ul li {
 .touch p{
     color: #fff;
     font-size: 15px;
+}
+.bg-gradient-overlay2 {
+    position: relative;
+    z-index: 1;
+}
+.bg-gradient-overlay2::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #2c455d;
+    background: -webkit-linear-gradient(to right, #7793af, #0d0d21);
+     background: linear-gradient(to right, #7793af, #0d0d21);
+    opacity: 0;
 }

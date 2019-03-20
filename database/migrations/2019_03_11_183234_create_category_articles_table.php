@@ -14,9 +14,9 @@ class CreateCategoryArticlesTable extends Migration
     public function up()
     {
         Schema::create('category_articles', function (Blueprint $table) {
-            $table->string('id',36)->primary();
-            $table->string('name',50);
-            $table->string('desc');
+            $table->string('code',36)->primary();
+            $table->string('cat_name',50);
+            $table->string('cat_desc');
             $table->timestamps();
         });
     }

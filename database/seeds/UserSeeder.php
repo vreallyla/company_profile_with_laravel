@@ -13,9 +13,9 @@ class UserSeeder extends Seeder
     {
         \App\User::create([
             'email' => 'admin@example.com',
-            'ava' => '/img/footages/user.png',
+            'user_ava' => '/img/footages/user.png',
             'password' => bcrypt('secret'),
-            'name' => 'admin',
+            'user_name' => 'admin',
             'remember_token'=>'daskjdhKJHDAk',
             'email_verified_at'=>now()
         ]);

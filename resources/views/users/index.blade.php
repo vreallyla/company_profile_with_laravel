@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title',env('APP_NAME')."'s home")
+@section('title',env('APP_NAME')." Selamat Datang di PT UJADIPERKASA")
 @section('main')
     <!-- ***** Welcome Area Start ***** -->
     <section class="welcome-area">
@@ -8,14 +8,14 @@
             <!-- Single Welcome Slide -->
             @foreach(\App\carousel::all() as $row)
                 @component('components.carousel')
-                    @slot('title',$row->title)
+                    <!--@slot('title',$row->title)-->
                     @slot('btnPrimary',$row->fill_btn_primary)
                     @slot('btnSecondary',$row->fill_btn_secondary)
                     @slot('urlPrimary',$row->url_btn_primary)
                     @slot('urlSecondary',$row->url_btn_secondary)
-                    @slot('img',$row->img)
+                    @slot('img',asset('storage/slide/nippon_resibon.png'))
 
-                    {{$row->desc}}
+                    <!--{{$row->desc}}-->
                 @endcomponent
             @endforeach
 
@@ -75,14 +75,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8">
-                    <p data-animation="fadeInUp" data-delay="300ms">PT. Usaha Jaya Primatek provides very reliable and
+                    <p>PT. Usaha Jaya Primatek provides very reliable and
                         safe products which our users would definitely love and trust, Please browse through our
                         product- line-up ABOUT UJPRIMATEK PT Usaha Jaya Primatek is a trading and distribution company
                         that focuses on the Industrial Tools and Spare parts for use in factories, constructions,
                         shipyards and minings.</p>
                 </div>
                 <div class="col-lg-3 col-md-4">
-                    <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms"
+                        <a href="#" class="btn dento-btn mx-2 active"
                        style="animation-delay: 700ms;">Touch Us</a>
                 </div>
 
@@ -110,7 +110,7 @@
                 <div class="col-12">
                     <div id="owl-demo" class="owl-carousel owl-theme">
                         @foreach($brands as $brand)
-                            <div class="item"><a href="https://ujprimatek.com/id/products/xtraseal-2/" tabindex="-1">
+                            <div class="item"><a href="#" tabindex="-1">
                                     <img class="aligncenter wp-image-2198 size-medium"
                                         src="{{asset($brand->logo)}}"
                                         alt="{{asset($brand->name)}}" width="184" height="70"
@@ -125,3 +125,5 @@
     </section>
     <!-- ***** brads Area End ***** -->
 @endsection
+
+
