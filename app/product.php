@@ -3,20 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use PascalDeVink\ShortUuid\ShortUuid;
 
 class product extends Model
 {
-    protected $primaryKey='code';
+    protected $primaryKey = 'code';
     public $incrementing = false;
-    protected $guarded = ['code','created_at', 'updated_at'];
-    protected $hidden=[
+    protected $guarded = ['code', 'created_at', 'updated_at'];
+    protected $hidden = [
         'code',
-'pro_name',
-'pro_img',
-'pro_desc',
+        'pro_name',
+        'pro_img',
+        'pro_desc',
     ];
-    protected $appends=[
+    protected $appends = [
         'id',
         'name',
         'img',
@@ -31,14 +30,17 @@ class product extends Model
     {
         return $this->attributes['code'];
     }
+
     public function getNameAttribute()
     {
         return $this->attributes['pro_name'];
     }
+
     public function getImgAttribute()
     {
         return $this->attributes['pro_img'];
     }
+
     public function getDescAttribute()
     {
         return $this->attributes['pro_desc'];
@@ -51,11 +53,16 @@ class product extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->code = (string)ShortUuid::uuid4();
+            $set = strtolower($model->pro_name);
+            $set=str_replace('&', 'and', $set);
+            $set=preg_replace('/[^\p{L}\p{N}\s]/u', '', $set);
+            $model->code = str_replace(' ', '-', $set);
+            $model->pro_name = $set;
         });
     }
+
     public function brands()
     {
-        return $this->belongsToMany(brand::class,rsBrandsProduct::class,'product_id','brand_id');
+        return $this->belongsToMany(brand::class, rsBrandsProduct::class, 'product_id', 'brand_id');
     }
 }

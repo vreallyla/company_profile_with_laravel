@@ -26,9 +26,9 @@ route::get('product', 'publicController@products')->name('product');
 route::get('product/{product}', 'publicController@productDetails')->name('productDetails');
 route::get('product/{product}/{brand}', 'publicController@subProduct')->name('subProduct');
 
-route::get('catalogue', 'publicController@contact')->name('catalogue');
 
-route::get('admin', 'publicController@contact')->name('catalogue');
+
+route::get('catalogue', 'publicController@catalog')->name('catalogue');
 
 Route::group(['prefix' => '/admin', 'namespace' => 'admin'], function () {
 
@@ -52,7 +52,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'admin'], function () {
         Route::group(['prefix' => '/list'], function () {
 
             route::get('/', function () {
-                return view('admin.articles.list.articles');
+                $cat = \App\categoryArticle::orderBy('cat_name', 'asc')->get();
+
+                return view('admin.articles.list.articles',compact('cat'));
             })->name('articleAdmin');
 
             route::get('/manipulate', function () {
@@ -73,18 +75,17 @@ Route::group(['prefix' => '/admin', 'namespace' => 'admin'], function () {
     });
 
     Route::group(['prefix' => '/settings'], function () {
-        route::get('/about', 'adminController@brands')->name('aboutAdmin');
-        route::get('/contacts', 'adminController@productCategories')->name('contactAdmin');
-        route::get('/slides', 'adminController@products')->name('slideAdmin');
-        route::get('/testimonials', 'adminController@products')->name('testimonialAdmin');
+        route::get('/about', 'adminController@about')->name('aboutAdmin');
+        route::get('/contacts', 'adminController@contacts')->name('contactAdmin');
+        route::get('/slides', 'adminController@slides')->name('slideAdmin');
+        route::get('/testimonials', 'adminController@tetimonials')->name('testimonialAdmin');
 
     });
 
-    route::get('/about', 'adminController@about')->name('aboutAdmin');
 
 
 });
 
 route::get('/coba', function () {
-    return csrf_token();
+    return urlencode('&');
 });

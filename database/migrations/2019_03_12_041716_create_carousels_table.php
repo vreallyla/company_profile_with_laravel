@@ -15,7 +15,7 @@ class CreateCarouselsTable extends Migration
     {
         Schema::create('carousels', function (Blueprint $table) {
             $table->string('code',36)->primary();
-            $table->string('car_title',50);
+            $table->string('car_title',80);
             $table->string('car_img',100);
             $table->string('car_desc');
             $table->string('fill_btn_primary');

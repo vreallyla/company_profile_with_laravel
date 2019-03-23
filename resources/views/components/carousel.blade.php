@@ -1,4 +1,4 @@
-<div class="welcome-welcome-slide bg-img bg-gradient-overlay2 jarallax"
+<div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax"
      style="background-image: url({{asset($img)}});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">

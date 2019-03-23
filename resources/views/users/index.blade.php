@@ -13,7 +13,7 @@
                     @slot('btnSecondary',$row->fill_btn_secondary)
                     @slot('urlPrimary',$row->url_btn_primary)
                     @slot('urlSecondary',$row->url_btn_secondary)
-                    @slot('img',asset('storage/slide/nippon_resibon.png'))
+                    @slot('img',asset($row->img))
 
                     <!--{{$row->desc}}-->
                 @endcomponent

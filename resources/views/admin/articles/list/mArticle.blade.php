@@ -10,15 +10,6 @@
 
 
     <style>
-        .mce-fullscreen {
-            z-index: 1030;
-        }
-
-        .form-group .bootstrap-select {
-            display: block;
-            width: 100% !important;
-        }
-
         .btn-default {
             background-color: #ffffff;
             border-color: #d2d6de;
@@ -42,6 +33,7 @@
                 <div class="col-md-offset-1 col-md-10">
                     <div class="box box-primary">
                         <div class="box-header with-border">
+                            <a href="{{route('articleAdmin')}}"><i data-toggle="tooltip" title="Back" class="fa fa-arrow-circle-left"></i></a>
                             <h3 class="box-title">Fill all field</h3>
                         </div>
                         <!-- /.box-header -->
@@ -77,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <textarea id="description" name="description" placeholder="Enter ...">
+                                    <textarea class="editor-tiny" id="description" name="description" placeholder="Enter ..." readonly>
                                         {{$article?$article->description:''}}
                                     </textarea>
                                     <span class="help-block"></span>
@@ -103,9 +95,15 @@
     <script src="{{asset('admin/js/class/common.js')}}"></script>
     <script>
         $(function () {
-            $('select').selectpicker();
             const key = "{{$id}}";
             const urlSite = "{{route('articles.index')}}";
+            const btnSubmit = $('.box-footer button');
+            const loadingIco = '<i class="fa fa-circle-o-notch fa-spin" style="padding-left: 1.3em;padding-right: 1.3em;"></i>';
+
+
+            $('document').ready(function () {
+                $('select').selectpicker();
+            });
 
             $('.box').on('submit', 'form', function (e) {
                 e.preventDefault();
@@ -114,14 +112,27 @@
             });
 
             function postItem(data) {
+                btnSubmit.empty().append(loadingIco);
                 axios.post(urlSite + (key ? '/' + key : ''), data)
                     .then(res => {
-                        console.log(res.data);
+                        $('.box').find('form')[0].reset();
+                        btnSubmit.empty().append('Submit');
+                        Swal.fire(
+                            'Success',
+                            res.data.message,
+                            'success'
+                        );
+                        if (key){
+                            setTimeout(function(){
+                                location.href= '{{route('articleAdmin')}}';
+                            },700)
+                        }
                     }).catch(err => {
+                    btnSubmit.empty().append('Submit');
                     if (err.response.status === 422) {
-                        showNotice(err.response.data.errors, 'form');
+                        showNotice(err.response.data.errors, $('form'));
                     } else if (err.response.status === 400) {
-                        location.href = "{{route('loginAdmin')}}";
+                        redirectLogin();
                     } else {
                         noticeWrong();
                     }

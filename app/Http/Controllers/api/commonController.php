@@ -26,18 +26,18 @@ class commonController extends Controller
             return $error;
         }
 
-        try {
-            Mail::to($r->message_email)->send(new contactMail($r));
-            if (count(Mail::failures()) == 0) {
-                feedback::create([
-                    'feed_name' => $r->message_name,
-                    'feed_email' => $r->message_email,
-                    'feed_msg' => $r->message,
-                ]);
-            }
-        } catch (\Exception $e) {
-            return response()->json(['msg' => "message can't send, you can try again...."], 403);
-        }
+//        try {
+//            Mail::to($r->message_email)->send(new contactMail($r));
+//            if (count(Mail::failures()) == 0) {
+//                feedback::create([
+//                    'feed_name' => $r->message_name,
+//                    'feed_email' => $r->message_email,
+//                    'feed_msg' => $r->message,
+//                ]);
+//            }
+//        } catch (\Exception $e) {
+//            return response()->json(['msg' => "message can't send, you can try again...."], 403);
+//        }
 
         return response()->json(['msg' => 'message delivered...'], 201);
     }

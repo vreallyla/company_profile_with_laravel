@@ -40,7 +40,7 @@
                     <div class="pull-right box-tools">
                         <form action="#">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control pull-right"
+                                <input type="text" name="table_search" class="form-control pull-right btn-search"
                                        placeholder="Search">
 
                                 <div class="input-group-btn">
@@ -53,278 +53,48 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
+                @for($i=0;$i<8;$i++)
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="box box-default skeleton skeleton-animation-pulse">
+                            <div class="box-header">
+                                <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
+                                <div class="box-tools pull-right">
+                                    <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
+                                            data-widget="collapse"><i
+                                            class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
+                                    </button>
+                                    <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
+                                            data-widget="collapse"><i
+                                            class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
                             </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
+                            <!-- /.box-header -->
+                            <div class="box-body" style="">
+                                <p class="bone bone-style-list bone-type-text">
+                                </p>
+                                <p class="bone bone-style-list bone-type-text">
+                                </p>
+                                <p class="bone bone-style-list bone-type-text width-quarter">
+                                </p>
                             </div>
-                            <!-- /.box-tools -->
+                            <!-- /.box-body -->
                         </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
+                        <!-- /.box -->
                     </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="box box-default skeleton skeleton-animation-pulse">
-                        <div class="box-header">
-                            <h3 class="box-title  with-border bone bone-type-heading width-quarter">Expandable</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" data-toggle="tooltip" title="edit" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-edit bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"
-                                        data-widget="collapse"><i
-                                        class="fa fa-trash bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus bone bone-type-image bone-style-round icon-skeleton"></i>
-                                </button>
-                            </div>
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body" style="">
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text">
-                            </p>
-                            <p class="bone bone-style-list bone-type-text width-quarter">
-                            </p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
+                @endfor
             </div>
         </section>
     </div>
     @include('admin.articles.categories.categoriesModal')
 @endsection
 @push('js')
+    <script src="{{asset('admin/js/class/common.js')}}"></script>
     <script>
         $(function () {
+
             const modali = $('.modal');
             const formManipulate = modali.find('form');
             const objAppend = $('.row').eq(2);
@@ -343,9 +113,6 @@
                 '                                <button type="button" data-toggle="tooltip" title="hapus" class="btn btn-box-tool"\n' +
                 '><i class="fa fa-trash"></i>\n' +
                 '                                </button>\n' +
-                '                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i\n' +
-                '                                        class="fa fa-minus bone bone-type-image"></i>\n' +
-                '                                </button>\n' +
                 '                            </div>\n' +
                 '                        </div>\n' +
                 '                        <div class="box-body" style="">\n' +
@@ -360,25 +127,36 @@
             function getItem(query) {
                 axios.get(urlCat, {
                     params: {
-                        state: query?true:false,
+                        state: query ? true : false,
                         q: query
                     }
                 })
                     .then((res) => {
                         objAppend.empty();
-                        $.each(res.data.data, function (i, val) {
-                            let fillWithCard = cardTemp.clone();
-                            let headerCard = fillWithCard.find('.box-title');
-                            let bodyCard = fillWithCard.find('.box-body');
-                            formSearch.find('[type="submit"]').empty().append('<i class="fa fa-search"></i>')
-                            headerCard.text(val.name);
-                            bodyCard.text(val.description);
-                            objAppend.append(fillWithCard);
+                        formSearch.find('[type="submit"]').empty().append('<i class="fa fa-search"></i>');
+                        if (res.data.data.length > 0) {
+                            $.each(res.data.data, function (i, val) {
+                                let fillWithCard = cardTemp.clone();
+                                let headerCard = fillWithCard.find('.box-title');
+                                let bodyCard = fillWithCard.find('.box-body');
+                                headerCard.text(val.name);
+                                bodyCard.text(val.description);
+                                objAppend.append(fillWithCard);
 
-                            objAppend.children().eq(i).data('key', val.id).hide().fadeIn(300);
-                        })
+                                objAppend.children().eq(i).data('key', val.id).hide().fadeIn(300);
+                            })
+                        } else {
+                            objAppend.append(notFoundIt());
+                        }
                     }).catch((err) => {
-                    formSearch.find('[type="submit"]').empty().append('<i class="fa fa-search"></i>')
+                    formSearch.find('[type="submit"]').empty().append('<i class="fa fa-search"></i>');
+                    if (err.response.status === 400) {
+                        redirectLogin();
+                    } else if (err.response.status === 400) {
+                        redirectLogin();
+                    }else {
+                        msgWeird();
+                    }
                 });
             }
 
@@ -396,11 +174,11 @@
                     }).catch(err => {
 
                     if (err.response.status === 422) {
-                        // alert('a');
-                        // console.log(err.response);
-                        $.each(err.response.data.errors, function (i, val) {
-                            $('.modal').find('[name=' + i + ']').next().text(val).parent().addClass('has-error');
-                        })
+                        showNotice(err.response.data.errors, $('.modal'));
+                    }else if (err.response.status === 400) {
+                            redirectLogin();
+                        } else {
+                        msgWeird();
                     }
                     load.hide();
                 });
@@ -425,12 +203,11 @@
                     }).catch(err => {
 
                     if (err.response.status === 422) {
-                        // alert('a');
-                        // console.log(err.response);
-                        $.each(err.response.data.errors, function (i, val) {
-                            console.log(val);
-                            $('.modal').find('[name=' + i + ']').next().text(val).parent().addClass('has-error');
-                        })
+                        showNotice(err.response.data.errors, $('.modal'));
+                    } else if (err.response.status === 400) {
+                        location.href = "{{route('loginAdmin')}}";
+                    } else {
+                        msgWeird();
                     }
                     load.hide();
                 });
@@ -462,7 +239,11 @@
                         formManipulate.data('key', keyN);
                     })
                     .catch(err => {
-                        console.log(err.response);
+                        if (err.response.status === 400) {
+                            redirectLogin();
+                        } else {
+                            msgWeird();
+                        }
                     })
             });
 
@@ -488,16 +269,20 @@
                                 getItem();
                             })
                             .catch(err => {
-                                console.log(err);
+                                if (err.response.status === 400) {
+                                    redirectLogin();
+                                } else {
+                                    msgWeird();
+                                }
                             });
 
                     }
                 })
             });
 
-            inputSearch.on('keypress',function(e) {
-                if(e.which == 13) {
-                   formManipulate.submit();
+            inputSearch.on('keypress', function (e) {
+                if (e.which == 13) {
+                    formSearch.submit();
                 }
             });
 
@@ -517,7 +302,6 @@
                     createItem(formFunc, loading);
                 }
             });
-
 
         })
     </script>

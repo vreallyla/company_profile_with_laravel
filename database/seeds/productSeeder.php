@@ -61,7 +61,7 @@ class productSeeder extends Seeder
                 \App\rsBrandsProduct::create([
                     'brand_id' => $brand->code,
                     'product_id' => $product->code,
-                    'list_title' => $faker->word,
+                    'list_title' => $faker->unique()->text(20),
                     'list_img' => '/img/footages/600x400.png',
                     'list_desc' => '<p>'.$faker->realText($maxNbChars = 191, $indexSize = 2).'</p>',
                     'link_catalogue' => $faker->url,

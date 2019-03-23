@@ -107,7 +107,7 @@
             const btnForm = $(this).find('[type=submit]');
 
             fieldForm.prop('readonly', true);
-            btnForm.html('<i class="fa fa-circle-o-notch loading-spin"></i>');
+            btnForm.html('<i class="fa fa-circle-o-notch fa-spin"></i>');
 
             noticeWrong.remove();
 

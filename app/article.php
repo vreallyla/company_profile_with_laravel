@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use PascalDeVink\ShortUuid\ShortUuid;
+use Intervention\Image\Facades\Image;
 
 class article extends Model
 {

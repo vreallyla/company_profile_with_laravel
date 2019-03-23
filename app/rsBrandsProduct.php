@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use PascalDeVink\ShortUuid\ShortUuid;
 
 class rsBrandsProduct extends Model
 {
@@ -48,7 +47,11 @@ class rsBrandsProduct extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->code = (string)ShortUuid::uuid4();
+            $set=strtolower($model->list_title);
+            $set=str_replace('&', 'and', $set);
+            $set=preg_replace('/[^\p{L}\p{N}\s]/u', '', $set);
+            $model->code = str_replace(' ', '-', $set);
+            $model->list_title = $set;
         });
     }
 }

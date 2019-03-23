@@ -42,7 +42,11 @@ class brand extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->code = (string)ShortUuid::uuid4();
+            $set=strtolower($model->brand_name);
+            $set=str_replace('&', 'and', $set);
+            $set=preg_replace('/[^\p{L}\p{N}\s]/u', '', $set);
+            $model->code = str_replace(' ', '-', $set);
+            $model->brand_name = $set;
         });
     }
 

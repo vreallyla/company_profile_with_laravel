@@ -10,6 +10,7 @@ use App\PDO\watermark;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 const NAME_FUNC = 'articles';
 
@@ -123,7 +124,7 @@ class articlesController extends Controller
     {
         $rules = [
             'title' => 'required|min:6|max:50',
-            'img' => 'image|max:1000',
+            'img' => 'image|max:2500',
             'description' => 'required|min:10|max:10000',
             'category' => 'required|exists:category_articles,code',
         ];
@@ -150,6 +151,20 @@ class articlesController extends Controller
 
                    $name = Storage::disk('local')->put('public/article-photos', $new);
                    $url = self::slice_public($name);
+
+                   $thumbnailpath = $url;
+                   ini_set('memory_limit','180M');
+
+                   $img = Image::make($thumbnailpath)->resize(1600, null, function ($constraint) {
+                       $constraint->aspectRatio();
+                       $constraint->upsize();
+                   });
+
+                   $img->encode('jpg', 100)->save($thumbnailpath);
+
+                   if (!file_exists($url)) {
+                       return response()->json(['msg' => 'upload gambar gagal'], 400);
+                   }
                }
            }
         } catch (\Exception $e) {

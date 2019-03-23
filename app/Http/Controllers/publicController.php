@@ -33,6 +33,14 @@ class publicController extends Controller
         return view('users.about', compact('data', 'brands', 'testi'));
     }
 
+    public function catalog()
+    {        $data = $this->dataGen();
+
+
+        return view('users.catalogue', compact('data'));
+
+    }
+
     public function news(Request $r)
     {
         $data = $this->dataGen();

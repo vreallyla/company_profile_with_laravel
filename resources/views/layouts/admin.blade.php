@@ -369,9 +369,9 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{route('aboutAdmin')}}"><i class="fa fa-circle-o"></i> About</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Contact</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Slides</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Testimonials</a></li>
+                        <li><a href="{{route('contactAdmin')}}"><i class="fa fa-circle-o"></i> Contact</a></li>
+                        <li><a href="{{route('slideAdmin')}}"><i class="fa fa-circle-o"></i> Slides</a></li>
+                        <li><a href="{{route('testimonialAdmin')}}"><i class="fa fa-circle-o"></i> Testimonials</a></li>
                     </ul>
                 </li>
 

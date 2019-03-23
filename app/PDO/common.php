@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 trait common
 {
+
     protected static function validates($r, $rule, $notice)
     {
         $validator = Validator::make($r, $rule, $notice);

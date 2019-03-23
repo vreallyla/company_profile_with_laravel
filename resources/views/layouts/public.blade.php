@@ -126,7 +126,7 @@
                                                 <a href="{{route('productDetails',['product'=>$product->id])}}">- {{strlen($product->name)<20?$product->name:substr($product->name,0,19).'...'}}</a>
                                                 <ul class="dropdown" style="left: 197px;">
                                                     @foreach($product->brands as $brand)
-                                                        <li><a href="{{route('subProduct',['product'=>$product->id,'brand'=>$brand->id])}}">- {{strlen($brand->name)<20?$brand->name:substr($brand->name,0,19).'...'}}</a></li>
+                                                        <li><a href="{{route('subProduct',['product'=>$product->id,'brand'=>$brand->id])}}">{{strlen($brand->name)<20?$brand->name:substr($brand->name,0,19).'...'}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -201,16 +201,10 @@
                     <!-- Quick Links Nav -->
                     <nav>
                         <ul class="quick-links">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Advisors</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Dentist</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Legals</a></li>
+                            <li><a href="#">Katalog</a></li>
+                            <li><a href="#">Kontak Kami</a></li>
+                            <li><a href="#">Berita & Event</a></li>
+                            <li><a href="#">Tentang Kami</a></li>
                         </ul>
                     </nav>
                 </div>
